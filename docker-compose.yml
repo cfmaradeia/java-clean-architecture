@@ -1,0 +1,15 @@
+services:
+    database:
+        container_name: postgres_java_clean_arch
+        image: postgres:13.7
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_PASSWORD=pass
+            - POSTGRES_USER=user
+            - POSTGRES_DB=codechella_db
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready -U user -d codechella_db"]
+            interval: 20s
+            timeout: 10s
+            retries: 10
