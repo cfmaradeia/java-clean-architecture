@@ -9,7 +9,7 @@ public class UsuarioEntityMapper {
         return new UsuarioEntity(usuario.getCpf(), usuario.getNome(), usuario.getNascimento(), usuario.getEmail());
     }
 
-    public Usuario toModel(UsuarioEntity usuarioEntity) {
+    public Usuario toDomain(UsuarioEntity usuarioEntity) {
         return new Usuario(usuarioEntity.getCpf(), usuarioEntity.getNome(), usuarioEntity.getNascimento(), usuarioEntity.getEmail());
     }
 }
